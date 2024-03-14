@@ -10,15 +10,18 @@ const LoginPage = () => {
   const [showPassword, setShowPassword] = useState(false);
 
   const handleLogin = () => {
+    // Logic for handling login
     navigation.navigate('Page1');
   };
 
   const handleSignUp = () => {
+    // Logic for handling sign up
     navigation.navigate('Registration');
   };
 
   const handleResetPassword = () => {
-    navigation.navigate('ForgotPasswordScreen');
+    // Logic for handling forgot password
+    navigation.navigate("ForgotPasswordScreen");
   };
 
   return (
@@ -43,18 +46,12 @@ const LoginPage = () => {
         </View>
 
         {/* Login button */}
-        <TouchableOpacity
-          style={[styles.button, { backgroundColor: '#A54A64', width: '45%' }]}
-          onPress={handleLogin}
-        >
+        <TouchableOpacity style={[styles.button, { backgroundColor: '#1A2F36', width: '45%' }]} onPress={handleLogin}>
           <Text style={styles.buttonText}>Login</Text>
         </TouchableOpacity>
 
         {/* Sign up button */}
-        <TouchableOpacity
-          style={[styles.button, { backgroundColor: '#A54A64', width: '45%' }]}
-          onPress={handleSignUp}
-        >
+        <TouchableOpacity style={[styles.button, { backgroundColor: '#1A2F36', width: '45%' }]} onPress={handleSignUp}>
           <Text style={styles.buttonText}>Sign Up</Text>
         </TouchableOpacity>
 
