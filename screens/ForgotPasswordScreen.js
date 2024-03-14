@@ -36,7 +36,7 @@ const ForgotPasswordScreen = () => {
           <Button 
             title="Reset" 
             onPress={handleResetPassword} 
-            color="#1A2F36" // Set button color to #1A2F36
+            color="#A54A64" 
           />
         </View>
       </View>

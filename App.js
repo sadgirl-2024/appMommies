@@ -58,8 +58,8 @@ const HomeScreen = ({ navigation }) => {
     <View style={styles.container}>
       <Header />
       <View style={styles.content}>
-      <h1 style={{ color: '#C76D31' }}>Let's get Started</h1>
-        <Button title="Login" onPress={handleLoginPress} color="#1A2F36" />
+      <h1 style={{ color: '#B2818C' }}>Click to start</h1>
+        <Button title="Enter" onPress={handleLoginPress} color="#A54A64" />
       </View>
       <StatusBar style="auto" />
     </View>

@@ -4,16 +4,16 @@ import { useNavigation } from '@react-navigation/native'; // Import useNavigatio
 import logo from '../assets/logo.png';
 
 const Header = props => {
-  const navigation = useNavigation(); // Initialize navigation
+  const navigation = useNavigation(); 
 
   const handleLoginPress = () => {
-    navigation.navigate('Login'); // Navigate to the 'Login' screen
+    navigation.navigate('Login'); 
   };
 
   return (
     <View style={styles.Header}>
-      <Image source={logo} style={{ width: 125, height: 125, marginRight: 10 }} />
-      <Text style={styles.HeaderTitle}>{props.title}Corp</Text>
+      <Image source={logo} style={{ width: 200, height: 200, marginRight: 10 }} />
+      <Text style={styles.HeaderTitle}>{props.title}</Text>
       
     </View>
   );

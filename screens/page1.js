@@ -1,11 +1,18 @@
-import React from 'react';
-import { StyleSheet, View, Button, Image } from 'react-native'; // Import Image component
+import React, { useState } from 'react';
+import { StyleSheet, View, Button, TextInput, Text } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 import Header from '../component/Header';
 
 const Page1 = () => {
   const navigation = useNavigation();
+  const [text, setText] = useState('');
+
+  const handleSubmit = () => {
+    // Handle submission here, you can access the text using the 'text' state
+    console.log('Submitted text:', text);
+    // You can perform further actions here, such as sending the text to a server or displaying it
+  };
 
   const handleLogout = () => {
     navigation.navigate('Home');
@@ -16,14 +23,19 @@ const Page1 = () => {
       <View style={styles.container}>
         <Header />
         <View style={styles.content}>
-          {/* Display the image */}
-          <Image
-            source={require('../assets/home.png')} // Path to the image file
-            style={styles.image} // Apply styles to the image
+          <Text style={[styles.title, { color: '#B2818C' }]}>Welcome, how can I help you?</Text>
+
+          <TextInput
+            style={styles.input}
+            onChangeText={setText}
+            value={text}
+            placeholder="Type your message here"
           />
-          {/* Your other page content here */}
-          <Button title="Logout" onPress={handleLogout} color="#1A2F36" />
+          <Button title="Submit" onPress={handleSubmit} color="#A54A64" style={{ marginBottom: 20 }} />
+
+         
         </View>
+         <Button title="Logout" onPress={handleLogout} color="#A54A64" />
       </View>
     </SafeAreaProvider>
   );
@@ -40,10 +52,17 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     paddingHorizontal: 20,
   },
-  image: {
-    width: 200, 
-    height: 200, 
-    resizeMode: 'contain', 
+  title: {
+    fontSize: 20,
+    marginBottom: 20,
+  },
+  input: {
+    height: 40,
+    width: '65%', // Set width to 65%
+    borderColor: 'gray',
+    borderWidth: 1,
+    paddingHorizontal: 10,
+    marginBottom: 20,
   },
 });
 
